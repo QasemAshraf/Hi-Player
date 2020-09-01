@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.huawei.agconnect'
+
+
+android {
+
+
+
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.example.hiplayer"
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+signingConfigs {
+    release {
+        storeFile file('F:\\Android\\IntelliMinds\\MyApp\\HiPlayer\\key0.jks')
+        storePassword 'P@$$W0RD_KEY134679'
+        keyPassword 'P@$$W0RD_KEY134679'
+        keyAlias 'key0'
+    }
+        config {
+            storeFile file('F:\\Android\\IntelliMinds\\MyApp\\HiPlayer\\key0.jks')
+            storePassword 'QP@$$W0RD_KEY134679'
+            keyPassword 'QP@$$W0RD_KEY134679a'
+            keyAlias 'key0'
+        }
+}
+    buildTypes {
+
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+
+//        release {
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.release
+//        }
+//        debug {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.release
+//        }
+
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.material:material:1.2.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:23.2.0'
+    implementation 'androidx.palette:palette:1.0.0'
+
+    implementation 'com.huawei.hms:push:5.0.0.300'
+}
