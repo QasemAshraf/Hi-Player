@@ -1,7 +1,6 @@
 package com.example.hiplayer.Fragments;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,23 +13,21 @@ import static com.example.hiplayer.Utils.Utilities.albums;
 
 public class AlbumsFragment extends Fragment {
 
-
     public static AlbumAdapter albumAdapter;
 
-    public AlbumsFragment() {
+    public AlbumsFragment()
+    {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_albums, container, false);
         iniView(view);
-
         return view;
-
     }
 
     private void iniView(View view)

@@ -5,24 +5,19 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.media.MediaMetadataRetriever;
 import android.net.Uri;
-import android.os.Build;
 import android.provider.MediaStore;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-
-import androidx.annotation.RequiresApi;
-
 import com.bumptech.glide.Glide;
 import com.example.hiplayer.Model.MusicFiles;
 import com.example.hiplayer.R;
 import java.util.ArrayList;
 
-public class Utilities {
-
+public class Utilities
+{
     public static ArrayList<MusicFiles> albums = new ArrayList<>();
 
-    @RequiresApi(api = Build.VERSION_CODES.Q)
     public static ArrayList<MusicFiles> getAllAudio (Context context)
     {
 
@@ -32,7 +27,6 @@ public class Utilities {
         Uri uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
         String [] projection =
                 {
-//                        MediaStore.Audio.Genres.Members.CONTENT_DIRECTORY,
                         MediaStore.Audio.Media.DATA,
                         MediaStore.Audio.Media.TITLE,
                         MediaStore.Audio.Media.ALBUM,
@@ -91,16 +85,13 @@ public class Utilities {
         return art;
     }
 
-
     public static void ImageAnimation (final Context context, final ImageView imageView, final Bitmap bitmap)
     {
-
         Animation animOut = AnimationUtils.loadAnimation(context, android.R.anim.fade_out);
         final Animation animIn = AnimationUtils.loadAnimation(context, android.R.anim.fade_in);
         animOut.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-
             }
 
             @Override
@@ -115,21 +106,17 @@ public class Utilities {
                     public void onAnimationStart(Animation animation) {
 
                     }
-
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
                     }
-
                     @Override
                     public void onAnimationRepeat(Animation animation) {
 
                     }
                 });
                 imageView.startAnimation(animIn);
-
             }
-
             @Override
             public void onAnimationRepeat(Animation animation) {
 
@@ -137,9 +124,5 @@ public class Utilities {
         });
         imageView.startAnimation(animOut);
     }
-
-
-
-
 
 }

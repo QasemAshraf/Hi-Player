@@ -1,11 +1,9 @@
 package com.example.hiplayer.Splash;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-
 import com.example.hiplayer.Main.MainActivity;
 import com.example.hiplayer.R;
 

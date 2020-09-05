@@ -17,7 +17,8 @@ public class MyAlbumHolder extends RecyclerView.ViewHolder {
     private ImageView album_image;
     private TextView album_name;
 
-    public MyAlbumHolder(@NonNull View itemView) {
+    public MyAlbumHolder(@NonNull View itemView)
+    {
         super(itemView);
 
         album_image = itemView.findViewById(R.id.album_image);

@@ -19,20 +19,23 @@ public class AlbumAdapter extends RecyclerView.Adapter<MyAlbumHolder> {
     private Context mContext;
     private ArrayList<MusicFiles> albumFiles;
 
-    public AlbumAdapter(Context mContext, ArrayList<MusicFiles> albumFiles) {
+    public AlbumAdapter(Context mContext, ArrayList<MusicFiles> albumFiles)
+    {
         this.mContext = mContext;
         this.albumFiles = albumFiles;
     }
 
     @NonNull
     @Override
-    public MyAlbumHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyAlbumHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    {
         View view = LayoutInflater.from(mContext).inflate(R.layout.album_item, parent, false);
         return new MyAlbumHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyAlbumHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull MyAlbumHolder holder, final int position)
+    {
 
         holder.bindView(albumFiles.get(position));
 

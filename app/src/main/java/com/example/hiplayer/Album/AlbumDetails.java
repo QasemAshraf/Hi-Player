@@ -9,7 +9,6 @@ import com.bumptech.glide.Glide;
 import com.example.hiplayer.Album.AlbumDetailsAdapter.AlbumDetailsAdapter;
 import com.example.hiplayer.Model.MusicFiles;
 import com.example.hiplayer.R;
-
 import java.util.ArrayList;
 import static com.example.hiplayer.Main.MainActivity.musicFiles;
 import static com.example.hiplayer.Utils.Utilities.getAlbumArt;
@@ -23,12 +22,12 @@ public class AlbumDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album_details);
-
         iniView();
     }
 
     @Override
-    protected void onResume() {
+    protected void onResume()
+    {
         super.onResume();
 
         if (!(albumSongs.size() < 1))
@@ -40,7 +39,8 @@ public class AlbumDetails extends AppCompatActivity {
         }
     }
 
-    private void iniView() {
+    private void iniView()
+    {
 
         recyclerView = findViewById(R.id.details_recycler_view);
         ImageView albumPhoto = findViewById(R.id.albumPhoto);

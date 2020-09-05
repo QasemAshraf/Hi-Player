@@ -18,7 +18,8 @@ public class MusicAdapter extends RecyclerView.Adapter<MyMusicHolder> {
     public static ArrayList<MusicFiles> mFiles;
 
 
-    public MusicAdapter(Context mContext, ArrayList<MusicFiles> mFiles) {
+    public MusicAdapter(Context mContext, ArrayList<MusicFiles> mFiles)
+    {
         this.mContext = mContext;
         MusicAdapter.mFiles = mFiles;
 
@@ -26,16 +27,16 @@ public class MusicAdapter extends RecyclerView.Adapter<MyMusicHolder> {
 
     @NonNull
     @Override
-    public MyMusicHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyMusicHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    {
         View view = LayoutInflater.from(mContext).inflate(R.layout.music_items, parent, false);
         return new MyMusicHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyMusicHolder holder, final int position) {
-
+    public void onBindViewHolder(@NonNull MyMusicHolder holder, final int position)
+    {
         holder.bindView(mFiles.get(position));
-
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

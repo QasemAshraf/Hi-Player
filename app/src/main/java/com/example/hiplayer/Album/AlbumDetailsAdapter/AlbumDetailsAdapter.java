@@ -7,11 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.hiplayer.Model.MusicFiles;
 import com.example.hiplayer.PlayerActivity.PlayerActivity;
 import com.example.hiplayer.R;
-
 import java.util.ArrayList;
 
 public class AlbumDetailsAdapter extends RecyclerView.Adapter<MyAlbumDetailsHolder> {
@@ -19,21 +17,24 @@ public class AlbumDetailsAdapter extends RecyclerView.Adapter<MyAlbumDetailsHold
     private Context mContext;
     public static ArrayList<MusicFiles> albumFiles;
 
-    public AlbumDetailsAdapter(Context mContext, ArrayList<MusicFiles> albumFiles) {
+    public AlbumDetailsAdapter(Context mContext, ArrayList<MusicFiles> albumFiles)
+    {
         this.mContext = mContext;
         AlbumDetailsAdapter.albumFiles = albumFiles;
     }
 
     @NonNull
     @Override
-    public MyAlbumDetailsHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyAlbumDetailsHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    {
 
         View view = LayoutInflater.from(mContext).inflate(R.layout.music_items, parent, false);
         return new MyAlbumDetailsHolder( view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyAlbumDetailsHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull MyAlbumDetailsHolder holder, final int position)
+    {
 
         holder.bindView(albumFiles.get(position));
 

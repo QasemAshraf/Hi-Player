@@ -14,9 +14,10 @@ public class MyMusicHolder extends RecyclerView.ViewHolder {
 
     private ImageView musicImg;
     private TextView musicName;
-    MyMusicHolder(@NonNull View itemView) {
-        super(itemView);
 
+    MyMusicHolder(@NonNull View itemView)
+    {
+        super(itemView);
         musicImg = itemView.findViewById(R.id.music_img);
         musicName = itemView.findViewById(R.id.music_file_name);
     }

@@ -1,7 +1,6 @@
 package com.example.hiplayer.Main;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
@@ -21,6 +20,7 @@ import com.example.hiplayer.Model.MusicFiles;
 import com.example.hiplayer.R;
 import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
+
 import static com.example.hiplayer.Utils.Utilities.getAllAudio;
 
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
@@ -29,20 +29,23 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     public static ArrayList<MusicFiles> musicFiles;
     public static boolean shuffleBoolean = false, repeatBoolean = false;
 
-    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         permission();
+        actionBar();
+    }
+
+    private void actionBar()
+    {
         Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.Q)
-    private void permission() {
+    private void permission()
+    {
         if (ContextCompat.checkSelfPermission(getApplicationContext(),
                 Manifest.permission.WRITE_EXTERNAL_STORAGE)
         != PackageManager.PERMISSION_GRANTED)
@@ -59,9 +62,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+    {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_CODE)
         {
@@ -81,7 +84,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         }
     }
 
-    private void iniViewPager() {
+    private void iniViewPager()
+    {
 
         ViewPager viewPager = findViewById(R.id.view_pager);
         TabLayout tabLayout = findViewById(R.id.tab_layout);
@@ -93,7 +97,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         getMenuInflater().inflate(R.menu.search, menu);
         MenuItem menuItem = menu.findItem(R.id.search_option);
         SearchView searchView = (SearchView) menuItem.getActionView();
@@ -108,7 +113,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     }
 
     @Override
-    public boolean onQueryTextChange(String newText) {
+    public boolean onQueryTextChange(String newText)
+    {
         String userInput = newText.toLowerCase();
         ArrayList<MusicFiles> myFiles = new ArrayList<>();
         for (MusicFiles song : musicFiles)

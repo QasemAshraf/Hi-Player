@@ -84,7 +84,8 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
     }
 
 
-    private void runOnUiThread() {
+    private void runOnUiThread()
+    {
         PlayerActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -104,7 +105,8 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
 
     }
 
-    private void iniView() {
+    private void iniView()
+    {
 
         song_name = findViewById(R.id.song_name);
         artist_name = findViewById(R.id.song_artist);
@@ -121,12 +123,10 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
         shuffleBtn.setOnClickListener(this);
         repeatBtn.setOnClickListener(this);
 
-
-
-
     }
 
-    private void iniUiPlayer() {
+    private void iniUiPlayer()
+    {
         mediaPlayer.setOnCompletionListener(this);
 
         song_name.setText(listSong.get(position).getTitle());
@@ -173,7 +173,6 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
         position = getIntent().getIntExtra("position", -1);
         String sender = getIntent().getStringExtra("sender");
 
-
         if (sender != null && sender.equals("albumDetails")) {
             listSong = albumFiles;
         } else {
@@ -197,13 +196,15 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
 
     }
 
-    private int getRandom(int i) {
+    private int getRandom(int i)
+    {
         Random random = new Random();
         return random.nextInt(i + 1);
     }
 
     @Override
-    protected void onResume() {
+    protected void onResume()
+    {
 //        setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
         playThreadBtn();
@@ -212,7 +213,8 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
         super.onResume();
     }
 
-    private void playPauseBtnClicked() {
+    private void playPauseBtnClicked()
+    {
 
         if (mediaPlayer.isPlaying()) {
             playPauseBtn.setImageResource(R.drawable.ic_play);
@@ -227,7 +229,8 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
         }
     }
 
-    private void nextThreadBtn() {
+    private void nextThreadBtn()
+    {
 
         Thread nextThread = new Thread() {
             @Override
@@ -246,7 +249,8 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
 
     }
 
-    private void nextBtnClicked() {
+    private void nextBtnClicked()
+    {
 
         if (mediaPlayer.isPlaying()) {
             mediaPlayer.stop();
@@ -280,7 +284,8 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
         }
     }
 
-    private void prevThreadBtn() {
+    private void prevThreadBtn()
+    {
 
         Thread prevThread = new Thread() {
             @Override
@@ -298,7 +303,8 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
 
     }
 
-    private void prevBtnClicked() {
+    private void prevBtnClicked()
+    {
 
         if (mediaPlayer.isPlaying()) {
             mediaPlayer.stop();
@@ -334,7 +340,8 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
 
     }
 
-    private void playThreadBtn() {
+    private void playThreadBtn()
+    {
 
         Thread playThread = new Thread() {
             @Override
@@ -353,9 +360,9 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
         playThread.start();
     }
 
-
     @Override
-    public void onCompletion(MediaPlayer mp) {
+    public void onCompletion(MediaPlayer mp)
+    {
         nextBtnClicked();
         if (mediaPlayer != null) {
             mediaPlayer = MediaPlayer.create(getApplicationContext(), uri);
@@ -366,7 +373,8 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View v)
+    {
         switch (v.getId()) {
             case R.id.shuffle:
                 if (shuffleBoolean) {

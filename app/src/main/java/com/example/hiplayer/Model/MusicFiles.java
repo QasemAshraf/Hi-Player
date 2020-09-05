@@ -17,8 +17,6 @@ public class MusicFiles {
         this.artist = artist;
     }
 
-
-
     public String getPath() {
         return path;
     }
