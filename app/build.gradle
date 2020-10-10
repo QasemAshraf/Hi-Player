@@ -19,7 +19,7 @@ android {
 
     signingConfigs {
         config {
-            storeFile file('C:\\Users\\qasem\\Desktop\\New folder\\keyHi\\keyHi.jks')
+            storeFile file('F:\\GIT_APPS\\New folder\\keyHi.jks')
             storePassword 'Qp@$$w0rd_keyHia'
             keyPassword 'Qp@$$w0rd_keyHia'
             keyAlias 'keyHi'
