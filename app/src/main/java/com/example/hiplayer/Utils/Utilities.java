@@ -20,7 +20,6 @@ public class Utilities
 
     public static ArrayList<MusicFiles> getAllAudio (Context context)
     {
-
         ArrayList<String> duplicate = new ArrayList<>();
         albums.clear();
         ArrayList<MusicFiles> audioList = new ArrayList<>();
@@ -60,7 +59,6 @@ public class Utilities
 
     public static String formattedTime(int mCurrentPosition)
     {
-
         String totalOut;
         String totalNew;
         String seconds = String.valueOf(mCurrentPosition % 60);

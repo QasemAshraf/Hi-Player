@@ -53,7 +53,6 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
         getIntentMethod();
         setPhoneStateListener();
 
-
     }
     PhoneStateListener phoneStateListener = new PhoneStateListener() {
         @Override
