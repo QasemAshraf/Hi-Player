@@ -15,7 +15,7 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="backgroundOverlayColorAlpha"> 10</item>
-        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowFullscreen">false</item>
         <item name="android:windowContentOverlay">@null</item>
 
     </style>
